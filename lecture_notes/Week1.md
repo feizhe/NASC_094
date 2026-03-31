@@ -56,12 +56,6 @@ You will earn a **Satisfactory (S)** or **No Credit (NC)** grade based on assign
 
 ---
 
-## The Fun Assignments 📸
-**Homework 4:** Submit a group photo of more than 3 people attending a campus event lasting at least an hour outside formal class affairs.
-* This can be a party, a volunteer event, a hike to the botanic garden, or a similar activity intended to help the class get to know each other better.
-* Briefly describe the event you attended and include any questions or issues you would like to discuss during the final lecture time.
-
----
 
 ## Let's Form Groups (Homework 1) 🤝
 Today's primary goal: Introductions, icebreakers, small groups, and project assignments.
