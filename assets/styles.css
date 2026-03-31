@@ -491,6 +491,10 @@ h3 {
   background: #ffffff;
 }
 
+.notes-title {
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);
