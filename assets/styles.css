@@ -1,15 +1,15 @@
 :root {
-  --bg: #f6f0e3;
-  --bg-deep: #ebe0c4;
-  --paper: rgba(255, 252, 245, 0.9);
-  --ink: #1f2b1f;
-  --muted: #5e675d;
-  --line: rgba(31, 43, 31, 0.14);
-  --green: #335c45;
-  --green-soft: #d7e3d8;
-  --gold: #c9922e;
-  --rust: #a34d2d;
-  --shadow: 0 20px 45px rgba(64, 51, 27, 0.12);
+  --bg: #ffffff;
+  --bg-soft: #f7f9fe;
+  --paper: rgba(255, 255, 255, 0.96);
+  --ink: #10233f;
+  --muted: #4d6182;
+  --line: rgba(0, 61, 165, 0.14);
+  --blue: #003da5;
+  --blue-soft: #e8f0ff;
+  --gold: #ffb81c;
+  --gold-soft: #fff3cf;
+  --shadow: 0 18px 40px rgba(0, 61, 165, 0.09);
   --radius-lg: 26px;
   --radius-md: 18px;
   --radius-sm: 12px;
@@ -27,34 +27,41 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(201, 146, 46, 0.24), transparent 28%),
-    radial-gradient(circle at top right, rgba(51, 92, 69, 0.22), transparent 30%),
-    linear-gradient(180deg, var(--bg) 0%, #f4efe2 46%, var(--bg-deep) 100%);
+    linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%);
   font-family: "Avenir Next", "Trebuchet MS", sans-serif;
   line-height: 1.6;
+  position: relative;
 }
 
 body::before {
   content: "";
   position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(31, 43, 31, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 43, 31, 0.04) 1px, transparent 1px);
-  background-size: 36px 36px;
+  inset: 0 auto 0 0;
+  width: clamp(12px, 3vw, 34px);
+  background: linear-gradient(180deg, var(--blue) 0%, #0a58d0 100%);
   pointer-events: none;
-  opacity: 0.32;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: clamp(12px, 3vw, 34px);
+  background: linear-gradient(180deg, var(--gold) 0%, #f3a900 100%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 a {
-  color: var(--green);
+  color: var(--blue);
 }
 
 .site-shell {
   position: relative;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 28px 20px 56px;
+  padding: 28px 20px 56px clamp(32px, 5vw, 64px);
 }
 
 .site-shell-inner {
@@ -70,7 +77,7 @@ a {
 }
 
 .brand {
-  color: var(--ink);
+  color: var(--blue);
   text-decoration: none;
   font-family: Georgia, "Palatino Linotype", serif;
   font-size: 1.2rem;
@@ -88,15 +95,15 @@ a {
   padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--blue);
   text-decoration: none;
 }
 
 .nav-links a[aria-current="page"] {
-  background: var(--green);
-  border-color: var(--green);
-  color: #fff8eb;
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
 }
 
 .hero,
@@ -111,7 +118,7 @@ a {
 .timeline-panel {
   background: var(--paper);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(0, 61, 165, 0.1);
   box-shadow: var(--shadow);
 }
 
@@ -127,6 +134,8 @@ a {
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  border-top: 8px solid var(--blue);
+  border-right: 8px solid var(--gold);
 }
 
 .hero-panel::after {
@@ -137,14 +146,14 @@ a {
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(201, 146, 46, 0.35), rgba(51, 92, 69, 0.24));
+  background: linear-gradient(135deg, rgba(255, 184, 28, 0.26), rgba(0, 61, 165, 0.14));
   filter: blur(10px);
 }
 
 .eyebrow,
 .section-tag {
   margin: 0 0 10px;
-  color: var(--rust);
+  color: var(--blue);
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -192,8 +201,8 @@ h3 {
 .hero-meta span {
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(51, 92, 69, 0.1);
-  border: 1px solid rgba(51, 92, 69, 0.14);
+  background: var(--blue-soft);
+  border: 1px solid rgba(0, 61, 165, 0.14);
   font-size: 0.94rem;
 }
 
@@ -219,12 +228,12 @@ h3 {
 }
 
 .button-primary {
-  background: var(--green);
-  color: #fff8eb;
+  background: var(--blue);
+  color: #ffffff;
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.72);
+  background: var(--gold-soft);
   color: var(--ink);
   border: 1px solid var(--line);
 }
@@ -267,11 +276,11 @@ h3 {
 }
 
 .accent-green {
-  border-top: 6px solid var(--green);
+  border-top: 6px solid var(--blue);
 }
 
 .accent-rust {
-  border-top: 6px solid var(--rust);
+  border-top: 6px solid var(--gold);
 }
 
 .compact {
@@ -297,7 +306,7 @@ h3 {
 .facts div {
   padding: 12px 14px;
   border-radius: var(--radius-sm);
-  background: rgba(51, 92, 69, 0.06);
+  background: var(--blue-soft);
 }
 
 .facts dt {
@@ -323,8 +332,8 @@ h3 {
 .grade-box {
   padding: 16px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(180deg, rgba(201, 146, 46, 0.16), rgba(51, 92, 69, 0.09));
-  border: 1px solid rgba(31, 43, 31, 0.09);
+  background: linear-gradient(180deg, rgba(255, 184, 28, 0.22), rgba(0, 61, 165, 0.08));
+  border: 1px solid rgba(0, 61, 165, 0.12);
 }
 
 .grade-box strong,
@@ -351,7 +360,7 @@ h3 {
 .timeline div {
   padding: 16px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.92);
   border: 1px solid var(--line);
 }
 
@@ -360,8 +369,8 @@ h3 {
   margin-bottom: 8px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(163, 77, 45, 0.11);
-  color: var(--rust);
+  background: var(--gold-soft);
+  color: var(--blue);
   font-size: 0.88rem;
   font-weight: 700;
 }
@@ -399,7 +408,7 @@ h3 {
 .assignment-list article {
   padding: 16px 18px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--line);
 }
 
@@ -424,13 +433,13 @@ h3 {
   align-items: start;
   padding: 16px 18px;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--line);
 }
 
 .schedule-week {
   font-weight: 700;
-  color: var(--green);
+  color: var(--blue);
 }
 
 .schedule-topic {
@@ -488,7 +497,7 @@ h3 {
 
 @media (max-width: 640px) {
   .site-shell {
-    padding: 16px 14px 42px;
+    padding: 16px 14px 42px 30px;
   }
 
   .hero-panel,
