@@ -224,6 +224,43 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  justify-content: flex-end;
+}
+
+.hero-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.hero-instructor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-instructor-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-instructor-name {
+  margin: 0;
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+.hero-instructor-email {
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .button {
@@ -541,6 +578,15 @@ h3 {
 
   h1 {
     max-width: 100%;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions {
+    justify-content: flex-start;
   }
 }
 
