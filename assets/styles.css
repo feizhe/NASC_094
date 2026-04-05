@@ -532,8 +532,21 @@ h3 {
   font-size: clamp(1.8rem, 3.6vw, 2.8rem);
 }
 
+.notes-page-title {
+  max-width: 100%;
+  font-size: clamp(2rem, 4.8vw, 3.6rem);
+}
+
 .notes-switcher {
   display: flex;
+}
+
+#deck-heading {
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  margin-bottom: 12px;
+}
+
+.notes-switcher {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 18px;
@@ -550,6 +563,7 @@ h3 {
 
 .note-slide h2 {
   margin-bottom: 14px;
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
 }
 
 .note-slide p {

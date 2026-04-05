@@ -1,7 +1,7 @@
 
 # Welcome to NASC 094! 📊
-**Adventures in Science: Issues, Careers, Research, Ethics and More**
-*Focus: Data Science (DTSC)*
+**Adventures in Science: DTSC**
+
 *Spring 2026*
 
 ---

@@ -1,6 +1,7 @@
 
 # Week 2: My Research Journey & Career Path 📈
 **NASC 094: Adventures in Science: DTSC**
+
 *Spring 2026*
 
 ---
