@@ -22,25 +22,37 @@
       <section class="page-intro reveal delay-1">
         <p class="eyebrow">Lecture Notes</p>
         <h1>NASC 094 Lecture Notes</h1>
-        <p class="hero-subtitle">Embedded course notes for weekly class materials.</p>
+        <p class="hero-subtitle">Choose a week below to view the slides on this page.</p>
       </section>
     </header>
 
     <main class="stack-layout">
       <section class="content-panel reveal delay-2">
-        <p class="section-tag">Week 1</p>
-        <h2>Embedded notes</h2>
-        <p class="muted">If the embedded page does not load correctly, open <a href="Week1.html">Week 1 notes directly</a>.</p>
-        <div class="embed-shell">
-          <iframe
-            class="notes-frame"
-            src="Week1.html"
-            title="Week 1 lecture notes"
-            loading="lazy">
-          </iframe>
+        <p class="section-tag">Weekly Notes</p>
+        <h2 id="deck-heading">Week 1</h2>
+        <p class="muted" id="deck-summary">Lecture notes are rendered directly from the markdown files in this folder.</p>
+        <div class="notes-switcher" role="tablist" aria-label="Lecture note weeks">
+          <a class="button button-secondary note-tab" href="#week1" data-week="week1">Week 1</a>
+          <a class="button button-secondary note-tab" href="#week2" data-week="week2">Week 2</a>
         </div>
       </section>
+
+      <div id="notes-content" class="stack-layout" aria-live="polite"></div>
+
+      <noscript>
+        <section class="content-panel">
+          <p class="section-tag">JavaScript Required</p>
+          <h2>Open the markdown files directly</h2>
+          <p>This page uses JavaScript to render the markdown lecture notes.</p>
+          <ul class="feature-list">
+            <li><a href="Week1.md">Week 1 markdown</a></li>
+            <li><a href="Week2.md">Week 2 markdown</a></li>
+          </ul>
+        </section>
+      </noscript>
     </main>
   </div>
+
+  <script src="../assets/lecture-notes.js" defer></script>
 </body>
 </html>
