@@ -13,13 +13,13 @@ Today I want to share:
 * and what I wish I knew earlier as an undergraduate.
 
 This is **not** a story about having everything planned perfectly.  
-It is a story about following questions, building skills, and staying open to opportunities.
+It is more about following questions, building skills, and staying open to opportunities.
 
 ---
 
 ## My Academic Path
 
-* **B.S. in Statistics** - Peking University
+* **B.S. in Statistics and Economics** - Peking University, China
 * **M.S. and Ph.D. in Biostatistics** - University of Michigan
 * **Assistant Professor** - UCLA Biostatistics Department
 * **Assistant Professor of Statistics** - UC Riverside Statistics
@@ -35,7 +35,12 @@ As you think about your own path, ask yourself:
 * **Is there anything you want to achieve during the 4 years undergraduate?**
 * **How can research-oriented thinking help in your career, even outside academia?**
 
+---
+
+## Research-oriented Thinking
+
 Research thinking is not only for professors or PhD students.  
+
 It means learning how to ask clear questions, test ideas, evaluate evidence, and improve your thinking over time.
 
 Those habits are useful in science, business, medicine, technology, public service, and everyday decision-making.

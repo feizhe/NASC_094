@@ -56,6 +56,23 @@ You will earn a **Satisfactory (S)** or **No Credit (NC)** grade based on assign
 
 ---
 
+## AI in Education and Research
+
+* **Large Language Models (LLMs):** Big 3
+
+    - OpenAI ChatGPT, 
+    - Google Gemini, 
+    - Anthropic Claude
+
+* **LLM Modes:** Fast, Thinking, Pro
+* **NotebookLM** for learning, by Google
+* **AI Agents:** Codex, Gemini Code, etc
+* **OpenClaw**
+
+
+---
+
+
 
 ## Let's Form Groups (Homework 1) 🤝
 Today's primary goal: Introductions, icebreakers, small groups, and project assignments.
