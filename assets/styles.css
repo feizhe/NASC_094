@@ -68,6 +68,12 @@ a {
   max-width: 1040px;
 }
 
+.notes-page .notes-shell {
+  width: min(calc(100vw - 48px), 1440px);
+  max-width: none;
+  padding: 20px 18px 40px 24px;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -584,6 +590,96 @@ h3 {
   font-size: 0.92em;
 }
 
+.notes-split-layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.3fr);
+  gap: 14px;
+  align-items: stretch;
+  height: clamp(760px, calc(100vh - 170px), 1120px);
+}
+
+.split-pane {
+  min-height: 0;
+}
+
+.split-pane-notes {
+  overflow: auto;
+  padding-right: 6px;
+}
+
+.split-pane-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.split-pane-paper {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  background: var(--paper);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 61, 165, 0.1);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.paper-open-link {
+  flex: 0 0 auto;
+}
+
+.paper-pane-body {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  background: #ffffff;
+}
+
+.paper-loading {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 1;
+  margin: 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid var(--line);
+}
+
+.paper-embed {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: #ffffff;
+}
+
+.paper-fallback {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+  max-width: 42ch;
+  margin: auto;
+  padding: 24px;
+}
+
+.paper-fallback h3,
+.paper-fallback p {
+  margin: 0;
+}
+
+.split-pane-paper.is-loaded .paper-loading {
+  display: none;
+}
+
+.split-pane-paper.is-fallback .paper-embed,
+.split-pane-paper.is-fallback .paper-loading {
+  display: none;
+}
+
 .notes-ordered-list {
   margin: 0;
   padding-left: 22px;
@@ -632,7 +728,8 @@ h3 {
   .content-grid,
   .timeline,
   .grade-boxes,
-  .two-column-list {
+  .two-column-list,
+  .notes-split-layout {
     grid-template-columns: 1fr;
   }
 
@@ -654,11 +751,29 @@ h3 {
   .hero-actions {
     justify-content: flex-start;
   }
+
+  .notes-split-layout {
+    height: auto;
+  }
+
+  .split-pane-notes {
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .split-pane-paper {
+    min-height: 640px;
+  }
 }
 
 @media (max-width: 640px) {
   .site-shell {
     padding: 16px 14px 42px 30px;
+  }
+
+  .notes-page .notes-shell {
+    width: min(calc(100vw - 20px), 1560px);
+    padding: 16px 10px 36px 14px;
   }
 
   .hero-panel,

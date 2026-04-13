@@ -1,7 +1,17 @@
 (function () {
   const decks = {
-    week1: { label: "Week 1", file: "Week1.md" },
-    week2: { label: "Week 2", file: "Week2.md" }
+    week1: { label: "Week 1", file: "Week1.md", layout: "stack" },
+    week2: { label: "Week 2", file: "Week2.md", layout: "stack" },
+    week3: {
+      label: "Week 3",
+      file: "Week3.md",
+      layout: "split",
+      paper: {
+        url: "../papers/nature21056.pdf#view=FitH",
+        title: "Dermatologist-level classification of skin cancer with deep neural networks",
+        citation: "Esteva et al. • Nature • 2017"
+      }
+    }
   };
 
   const heading = document.getElementById("deck-heading");
@@ -120,15 +130,90 @@
     return `<p>${html}</p>`;
   }
 
-  function renderDeck(deckKey, deck) {
-    heading.textContent = decks[deckKey].label;
-    summary.innerHTML = `${renderInline(deck.title)}<br><span class="muted notes-subtitle">${deck.subtitle.map((line) => renderInline(line)).join(" • ")}</span>`;
-
-    content.innerHTML = deck.slides.map((slide) => {
+  function renderSlides(slides) {
+    return slides.map((slide) => {
       const title = slide.title ? `<h2>${escapeHtml(slide.title)}</h2>` : "";
       const blocks = slide.blocks.map((block) => renderBlock(block)).join("");
       return `<section class="content-panel note-slide">${title}${blocks}</section>`;
     }).join("");
+  }
+
+  function renderSplitDeck(deck, deckConfig) {
+    const paper = deckConfig.paper;
+
+    return `
+      <div class="notes-split-layout">
+        <section class="split-pane split-pane-notes" aria-label="${escapeHtml(deckConfig.label)} notes">
+          <div class="split-pane-stack">
+            ${renderSlides(deck.slides)}
+          </div>
+        </section>
+
+        <section class="split-pane split-pane-paper" aria-label="Research paper PDF viewer">
+          <div class="paper-pane-body">
+            <p class="paper-loading muted">Loading the PDF in this pane...</p>
+            <iframe class="paper-embed" src="${paper.url}" title="${escapeHtml(paper.title)}" loading="lazy"></iframe>
+            <div class="paper-fallback" hidden></div>
+          </div>
+        </section>
+      </div>
+    `;
+  }
+
+  function setupPaperPane(deckConfig) {
+    if (!deckConfig.paper) {
+      return;
+    }
+
+    const pane = content.querySelector(".split-pane-paper");
+    if (!pane) {
+      return;
+    }
+
+    const frame = pane.querySelector(".paper-embed");
+    const fallback = pane.querySelector(".paper-fallback");
+    const loading = pane.querySelector(".paper-loading");
+    const fallbackTimer = window.setTimeout(showFallback, 4500);
+
+    function showLoaded() {
+      if (!pane.isConnected) {
+        return;
+      }
+
+      window.clearTimeout(fallbackTimer);
+      pane.classList.remove("is-fallback");
+      pane.classList.add("is-loaded");
+      fallback.hidden = true;
+      loading.hidden = true;
+    }
+
+    function showFallback() {
+      if (!pane.isConnected) {
+        return;
+      }
+
+      pane.classList.remove("is-loaded");
+      pane.classList.add("is-fallback");
+      fallback.hidden = false;
+      loading.hidden = true;
+    }
+
+    frame.addEventListener("load", showLoaded, { once: true });
+    frame.addEventListener("error", showFallback, { once: true });
+  }
+
+  function renderDeck(deckKey, deck) {
+    const deckConfig = decks[deckKey];
+
+    heading.textContent = deckConfig.label;
+    summary.innerHTML = `${renderInline(deck.title)}<br><span class="muted notes-subtitle">${deck.subtitle.map((line) => renderInline(line)).join(" • ")}</span>`;
+
+    if (deckConfig.layout === "split") {
+      content.innerHTML = renderSplitDeck(deck, deckConfig);
+      setupPaperPane(deckConfig);
+    } else {
+      content.innerHTML = renderSlides(deck.slides);
+    }
 
     tabs.forEach((tab) => {
       const isActive = tab.dataset.week === deckKey;
