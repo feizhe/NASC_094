@@ -694,6 +694,38 @@ h3 {
   margin-top: 4px;
 }
 
+.slide-figure {
+  margin: 0 0 14px;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  max-width: 75%;
+}
+
+.slide-img {
+  display: block;
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.slide-img-caption {
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: var(--bg-soft);
+}
+
+.slide-figure.img-missing .slide-img {
+  display: none;
+}
+
+.slide-figure.img-missing .slide-img-caption {
+  padding: 16px;
+  font-style: italic;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(16px);

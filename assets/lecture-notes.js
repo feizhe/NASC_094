@@ -11,7 +11,8 @@
         title: "Dermatologist-level classification of skin cancer with deep neural networks",
         citation: "Esteva et al. • Nature • 2017"
       }
-    }
+    },
+    week5: { label: "Week 5", file: "Week5.md", layout: "stack" }
   };
 
   const heading = document.getElementById("deck-heading");
@@ -48,6 +49,22 @@
       if (!trimmed) {
         index += 1;
         continue;
+      }
+
+      if (/^!\[/.test(trimmed)) {
+        const imgMatch = trimmed.match(/^!\[([^\]]*)\]\((\S+?)(?:\s+"([^"]*)")?\s*\)/);
+        if (imgMatch) {
+          let alt = imgMatch[1];
+          let width = null;
+          if (alt.includes("|")) {
+            const parts = alt.split("|");
+            alt = parts[0].trim();
+            width = parts[1].trim();
+          }
+          blocks.push({ type: "img", alt, src: imgMatch[2], link: imgMatch[3] || null, width });
+          index += 1;
+          continue;
+        }
       }
 
       if (/^\* /.test(trimmed)) {
@@ -124,6 +141,14 @@
 
     if (block.type === "ol") {
       return `<ol class="notes-ordered-list">${block.items.map((item) => `<li>${renderInline(item)}</li>`).join("")}</ol>`;
+    }
+
+    if (block.type === "img") {
+      const style = block.width ? ` style="width:${block.width};max-width:${block.width}"` : "";
+      const caption = block.link
+        ? `<a href="${escapeHtml(block.link)}" target="_blank" rel="noopener">${escapeHtml(block.alt)}</a>`
+        : escapeHtml(block.alt);
+      return `<figure class="slide-figure"${style}><img class="slide-img" src="${escapeHtml(block.src)}" alt="${escapeHtml(block.alt)}" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"><figcaption class="slide-img-caption">${caption}</figcaption></figure>`;
     }
 
     const html = block.lines.map((line) => renderInline(line)).join("<br>");
