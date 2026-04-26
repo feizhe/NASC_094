@@ -56,12 +56,18 @@
         if (imgMatch) {
           let alt = imgMatch[1];
           let width = null;
+          let contain = false;
           if (alt.includes("|")) {
             const parts = alt.split("|");
             alt = parts[0].trim();
-            width = parts[1].trim();
+            const mod = parts[1].trim();
+            if (mod === "contain") {
+              contain = true;
+            } else {
+              width = mod;
+            }
           }
-          blocks.push({ type: "img", alt, src: imgMatch[2], link: imgMatch[3] || null, width });
+          blocks.push({ type: "img", alt, src: imgMatch[2], link: imgMatch[3] || null, width, contain });
           index += 1;
           continue;
         }
@@ -144,11 +150,12 @@
     }
 
     if (block.type === "img") {
-      const style = block.width ? ` style="width:${block.width};max-width:${block.width}"` : "";
+      const figStyle = block.width ? ` style="width:${block.width};max-width:${block.width}"` : "";
+      const imgStyle = block.contain ? ` style="object-fit:contain;object-position:center;max-height:400px"` : "";
       const caption = block.link
         ? `<a href="${escapeHtml(block.link)}" target="_blank" rel="noopener">${escapeHtml(block.alt)}</a>`
         : escapeHtml(block.alt);
-      return `<figure class="slide-figure"${style}><img class="slide-img" src="${escapeHtml(block.src)}" alt="${escapeHtml(block.alt)}" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"><figcaption class="slide-img-caption">${caption}</figcaption></figure>`;
+      return `<figure class="slide-figure"${figStyle}><img class="slide-img"${imgStyle} src="${escapeHtml(block.src)}" alt="${escapeHtml(block.alt)}" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"><figcaption class="slide-img-caption">${caption}</figcaption></figure>`;
     }
 
     const html = block.lines.map((line) => renderInline(line)).join("<br>");

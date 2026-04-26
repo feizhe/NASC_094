@@ -24,7 +24,7 @@ Each one shows what happens when a researcher puts ambition or self-interest ahe
 ---
 
 ## Hwang Woo-suk (2004–2005): The "King of Cloning"
-![Hwang Woo-suk stem cell papers fabricated](img/hwang-headline.png "https://www.imdb.com/title/tt27846314")
+![Hwang Woo-suk stem cell papers fabricated|contain](img/hwang-headline.png "https://www.imdb.com/title/tt27846314")
 
 * **The claim:** Papers in *Science* announced the world's first patient-specific cloned human embryonic stem cells — celebrated as a national achievement in South Korea.
 * **The fraud:** A whistleblower revealed the stem cell lines were entirely fabricated. Hwang also coerced female subordinates in his lab to donate eggs for the research.
@@ -33,7 +33,7 @@ Each one shows what happens when a researcher puts ambition or self-interest ahe
 ---
 
 ## Ranga P. Dias (2020–2024): Room-Temperature Superconductivity
-![Dias papers retracted, removed from University of Rochester|50%](img/dias-headline.png "https://forbetterscience.com/2023/03/29/superconductive-fraud-the-sequel/")
+![Dias papers retracted, removed from University of Rochester](img/dias-headline.png "https://forbetterscience.com/2023/03/29/superconductive-fraud-the-sequel/"){: width="50%"}
 
 * **The claim:** Papers published in *Nature* in 2020 and 2023 claimed discovery of room-temperature superconductivity — widely described as the "holy grail" of physics.
 * **The fraud:** Investigations found evidence of data fabrication and manipulation across multiple papers. Dias attributed chart inconsistencies to "Adobe Illustrator."
