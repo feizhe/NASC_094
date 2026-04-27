@@ -33,7 +33,7 @@ Each one shows what happens when a researcher puts ambition or self-interest ahe
 ---
 
 ## Ranga P. Dias (2020–2024): Room-Temperature Superconductivity
-![Dias papers retracted, removed from University of Rochester](img/dias-headline.png "https://forbetterscience.com/2023/03/29/superconductive-fraud-the-sequel/"){: width="50%"}
+![Dias papers retracted, removed from University of Rochester|contain](img/dias-headline.png "https://forbetterscience.com/2023/03/29/superconductive-fraud-the-sequel/"){: width="65%"}
 
 * **The claim:** Papers published in *Nature* in 2020 and 2023 claimed discovery of room-temperature superconductivity — widely described as the "holy grail" of physics.
 * **The fraud:** Investigations found evidence of data fabrication and manipulation across multiple papers. Dias attributed chart inconsistencies to "Adobe Illustrator."
