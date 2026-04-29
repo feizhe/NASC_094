@@ -99,11 +99,11 @@ The core question remains the same: **is the work honestly yours?**
 ---
 
 ## Group Scenario Work
-You will work in your groups for about 10 minutes.
+This is a homework assignment to complete with your group.
 
-Each group will discuss one scenario, then share their thinking with the class.
+Each group should discuss **both scenarios** and submit the results of your discussion.
 
-For your scenario, discuss:
+For each scenario, discuss:
 1. What went wrong, and why is it a problem?
 2. Who is harmed, and how?
 3. What should the person have done instead?
@@ -112,7 +112,6 @@ For your scenario, discuss:
 ---
 
 ## Scenario A — Selective Data Removal
-*(Group 1)*
 
 A student collects survey data for a class project on study habits and GPA.
 After looking at the results, she notices that two responses look unusual and make her main finding disappear.
@@ -124,7 +123,6 @@ Discuss: What did she do wrong? Who is harmed? What should she have done?
 ---
 
 ## Scenario B — Unattributed AI Writing
-*(Group 2)*
 
 A student is assigned a one-page reflection on career goals.
 He pastes the assignment prompt into ChatGPT, lightly edits the output, and submits it.
@@ -136,7 +134,7 @@ Discuss: What did he do wrong? Is this plagiarism? What should he have done inst
 
 
 ## Debrief
-Each group shares their scenario and key conclusions.
+We will review common themes and key conclusions after the homework is submitted.
 
 Some themes that often come up:
 * Integrity violations exist on a spectrum from clear-cut to genuinely ambiguous.
