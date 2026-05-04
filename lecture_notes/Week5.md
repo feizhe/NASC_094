@@ -152,4 +152,4 @@ Today's main ideas:
 * Selective reporting, undisclosed AI use, and misrepresenting contributions are real and common problems.
 * If you are ever unsure whether something is acceptable, ask before submitting.
 
-Next week we will hear from alumni guest speakers about science careers.
+Next week we will explore science career paths connected to Statistics and Data Science.

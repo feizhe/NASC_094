@@ -12,7 +12,8 @@
         citation: "Esteva et al. • Nature • 2017"
       }
     },
-    week5: { label: "Week 5", file: "Week5.md", layout: "stack" }
+    week5: { label: "Week 5", file: "Week5.md", layout: "stack" },
+    week6: { label: "Week 6", file: "Week6.md", layout: "stack" }
   };
 
   const heading = document.getElementById("deck-heading");
